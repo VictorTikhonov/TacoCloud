@@ -1,0 +1,87 @@
+
+body {
+    font-family: 'Garamond', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+    color: #333;
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffcc66;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #333;
+}
+
+
+.message {
+    text-align: center;
+    font-size: 30px; 
+    color: #ff4c4c; 
+    margin-top: 20px;
+}
+
+
+.orders-table {
+    width: 1400px; 
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #e4e4e4; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 10px; 
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 24px; 
+    background-color: #e4e4e4; 
+}
+
+.orders-table th {
+    background-color: #0077b6;
+    color: white;
+    font-size: 30px; 
+    text-align: center; 
+}
+
+
+.orders-table td {
+    vertical-align: top;
+}
+
+.orders-table td ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.orders-table td ul li {
+    margin: 5px 0;
+    font-size: 24px; 
+    color: #000; 
+}
+
+.orders-table td span.taco-name {
+    font-weight: bold;
+    color: #0077b6; 
+}
+
+.orders-table td span.ingredient {
+    color: #000; 
+}
+
+.orders-table td span.bold-date {
+    font-weight: bold;
+}

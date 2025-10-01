@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: taco-cloud
+
+  datasource:
+      url: jdbc:postgresql://localhost:5432/TacoCloud
+      username: postgres
+      password: ',fpfLFYYS['
+      driver-class-name: org.postgresql.Driver

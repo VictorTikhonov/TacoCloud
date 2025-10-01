@@ -1,0 +1,182 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9; 
+    color: #333;
+    line-height: 1.8; 
+    box-sizing: border-box; 
+    font-family: 'Garamond', serif; 
+    font-size: 1.1em; 
+}
+
+
+header {
+    background-color: #ffcc66;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #333;
+}
+
+
+
+.back-home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.back-home-button button {
+    background-color: #e63946; 
+    color: #fff;
+    border: none;
+    padding: 12px 20px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em; 
+    display: inline-block;
+}
+
+.back-home-button button:hover {
+    background-color: #d62828; 
+}
+
+
+form {
+    padding: 25px; 
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #e4e4e4; 
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+    border: 2px solid #ffcc66; 
+    min-height: 824px; 
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-top: 25px;
+}
+
+
+.ingredient-group {
+    margin-bottom: 20px; 
+    padding: 20px; 
+    border-radius: 8px; 
+    background-color: #f1f5f9; 
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.2); 
+    border: 2px solid transparent; 
+    transition: all 0.3s ease; 
+}
+
+
+.ingredient-group h3 {
+    margin: 0 0 15px; 
+    color: #0077b6; 
+    font-size: 1.8em; 
+    font-weight: bold;
+}
+
+
+.ingredient-group input[type="checkbox"] {
+    margin-right: 15px; 
+    transform: scale(1.2); 
+}
+
+.ingredient-group span {
+    font-size: 1.2em; 
+    color: #333;
+}
+
+
+.name-field-wrapper {
+    margin-bottom: 25px; 
+    padding: 20px;
+    background-color: #f1f5f9; 
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.2); 
+    border: 2px solid transparent; 
+    transition: all 0.3s ease; 
+}
+
+.name-field-wrapper label {
+    font-size: 1.4em; 
+    color: #0077b6;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px; 
+}
+
+.name-field-wrapper input[type="text"] {
+    width: 100%;
+    padding: 18px; 
+    border-radius: 8px; 
+    border: 2px solid #0077b6; 
+    background-color: #f1f5f9; 
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.2); 
+    transition: border 0.3s ease, box-shadow 0.3s ease; 
+    box-sizing: border-box; 
+    font-size: 1.2em; 
+    height: 50px;
+}
+
+
+.name-field-wrapper input[type="text"]:focus {
+    border-color: #0077b6; 
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.2); 
+    outline: none; 
+}
+
+
+.validationWrapper {
+    margin-top: 25px; 
+    min-height: 40px; 
+}
+
+.validationError {
+    color: #e63946;
+    font-weight: bold;
+    font-size: 1.1em; 
+    display: none; 
+}
+
+.validationError:not(:empty) {
+    display: block; 
+}
+
+button {
+    margin: 2px auto; 
+    background-color: #28a745; 
+    color: white; 
+    padding: 10px 14px; 
+    border: none;
+    border-radius: 12px; 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    text-align: center; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out; 
+    display: block; 
+    width: auto; 
+}
+
+
+button:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
+}
+
+
+button:focus {
+    outline: none; 
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5); 
+}

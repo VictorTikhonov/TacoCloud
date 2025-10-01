@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Мои заказы</title>
+  <link rel="stylesheet" th:href="@{/styles/styleOrders.css}"/>
+</head>
+<body>
+
+<header>
+  <h1>Мои заказы</h1>
+</header>
+
+<!-- Сообщение, если заказов нет -->
+<div th:if="${message != null}" class="message">
+  <p th:text="${message}"></p>
+</div>
+
+<!-- Таблица с заказами -->
+<table class="orders-table">
+  <thead>
+  <tr>
+    <th>Дата заказа</th>
+    <th>Название тако и его состав</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Цикл по заказам -->
+  <tr th:each="order : ${orders}">
+    <td><span class="bold-date" th:text="${#dates.format(order.placeAt, 'dd.MM.yyyy HH:mm')}"></span></td>  <!-- Форматирование даты -->
+    <td>
+      <!-- Цикл по всем тако в заказе -->
+      <ul>
+        <li th:each="taco : ${order.tacos}">
+          <span class="taco-name" th:text="'Тако: ' + ${taco.name}"></span><br/>
+          <span th:each="ingredient, iterStat : ${taco.ingredients}">
+            <span class="ingredient" th:text="${ingredient.name}"></span>
+            <span th:if="${!iterStat.last}">, </span>
+          </span>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles/styleLogin.css}"/>
+</head>
+<body>
+
+<header>
+    <h1>Добро пожаловать в Taco-Cloud</h1>
+</header>
+
+<main>
+    <section class="block">
+        <div class="authorisation">
+            <h1>Авторизация</h1>
+            <div class="error">
+                <p th:if="${param.error}">Неверное имя пользователя или пароль.</p>
+            </div>
+        </div>
+
+        <form method="POST" th:action="@{/login}">
+            <div>
+                <label for="username" class="info-authorisation">Логин:</label>
+                <input type="text" id="username" name="username" th:value="${param.username}" required="required"/>
+            </div>
+            <div>
+                <label for="password" class="info-authorisation">Пароль:</label>
+                <input type="password" id="password" name="password" required="required"/>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Войти"/>
+            </div>
+        </form>
+        <p>Еще нет аккаунта? <a href="/register">Зарегистрируйтесь здесь</a></p>
+    </section>
+</main>
+
+
+<script th:inline="javascript">
+    if ([[${successMessage}]] != null) {
+        alert([[${successMessage}]]);
+        window.location.href = '/login';
+    }
+</script>
+
+</body>
+</html>

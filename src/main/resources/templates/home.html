@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница - Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles/stylesHome.css}" />
+</head>
+<body>
+<header>
+    <h1>Taco-Cloud</h1>
+    <form method="POST" th:action="@{/logout}" class="logout-form">
+        <input type="submit" value="Выход"/>
+    </form>
+</header>
+
+<main>
+    <section class="user-info">
+        <h2>Профиль</h2>
+        <ul>
+            <li><strong>Имя:</strong> <span th:text="${user.getFullName}">fullname</span></li>
+
+            <li><strong>Телефон:</strong> <span th:text="${user.phone}">phone</span></li>
+            <!-- Адрес с перечислением -->
+            <li><strong>Адресная информация:</strong>
+                <ul>
+                    <li><strong>Город:</strong> <span th:text="${user.city}">city</span></li>
+                    <li><strong>Адрес:</strong> <span th:text="${user.getStreet}">street</span></li>
+                    <li><strong>Область:</strong> <span th:text="${user.state}">state</span></li>
+                    <li><strong>Почтовый индекс:</strong> <span th:text="${user.zip}">zip</span></li>
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="order-section">
+        <button onclick="window.location.href='/home/myOrders'" class="order-button">Мои заказы</button>
+        <button onclick="window.location.href='/design'" class="order-button">Сделать заказ</button>
+    </section>
+
+</main>
+
+
+<script th:inline="javascript">
+    if ([[${successMessage}]] != null) {
+        alert([[${successMessage}]]);
+        window.location.href = '/home';
+    }
+</script>
+
+</body>
+</html>
+
+
+

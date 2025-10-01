@@ -1,0 +1,156 @@
+
+body {
+    font-family: 'Garamond', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;  
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #ffcc66;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #333;
+    padding-top: 10px; 
+}
+
+
+.logout-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-form input {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.logout-form input:hover {
+    background-color: #d62828;
+}
+
+
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.user-info {
+    font-size: 20px;
+    background: #e4e4e4;  
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ffcc66;
+}
+
+.user-info h2 {
+    margin-top: 0;
+    color: #0077b6;  
+    
+    font-size: 40px;
+}
+
+
+.user-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-info li {
+    margin: 10px 0;
+    padding: 15px; 
+    border-radius: 8px; 
+    background-color: #f1f5f9; 
+    transition: all 0.3s ease; 
+    border: 2px solid transparent; 
+    box-shadow: 0 2px 6px rgba(0, 119, 182, 0.2); 
+}
+
+
+.user-info li.highlight {
+    background-color: #ffe066; 
+    border-color: #0077b6; 
+    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.5); 
+}
+
+
+.user-info li.highlight strong {
+    color: #d14c4c; 
+}
+
+
+.user-info li ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.user-info li ul li {
+    margin-left: 0;
+    padding-bottom: 10px;
+    border-bottom: none; 
+}
+
+
+.user-info li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+.order-section {
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    gap: 160px; 
+}
+
+.order-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    display: inline-block; 
+    width: 200px; 
+}
+
+
+.order-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+
+.order-button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}

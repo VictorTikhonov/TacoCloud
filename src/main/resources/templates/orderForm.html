@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles/stylesOrderForm.css}"/>
+</head>
+
+<body>
+
+<header>
+    <h1>Оформление заказа</h1>
+</header>
+
+<form method="POST" th:action="@{/orders}" th:object="${tacoOrder}">
+    <h3>Ваши тако в этом заказе:</h3>
+    <ul>
+        <li th:each="taco : ${tacoOrder.tacos}">
+            <span th:text="${taco.name}">Название тако</span>
+        </li>
+        <a th:href="@{/design}" id="another">Создать другое тако</a><br/>
+    </ul>
+
+
+    <div class="form-column">
+        <h3>Доставка</h3>
+        <div class="form-group">
+            <label for="deliveryName">Имя: </label>
+            <input type="text" id="deliveryName" th:field="*{deliveryName}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('deliveryName')}"
+                          th:errors="*{deliveryName}">Имя ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryStreet">Адрес: </label>
+            <input type="text" id="deliveryStreet" th:field="*{deliveryStreet}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('deliveryStreet')}"
+                          th:errors="*{deliveryStreet}">Адрес ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryCity">Город: </label>
+            <input type="text" id="deliveryCity" th:field="*{deliveryCity}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('deliveryCity')}"
+                          th:errors="*{deliveryCity}">Город ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryState">Область: </label>
+            <input type="text" id="deliveryState" th:field="*{deliveryState}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('deliveryState')}"
+                          th:errors="*{deliveryState}">Область ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryZip">Почтовый индекс: </label>
+            <input type="text" id="deliveryZip" th:field="*{deliveryZip}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('deliveryZip')}"
+                          th:errors="*{deliveryZip}">Почтовый индекс ошибка</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-column">
+        <h3>Оплата</h3>
+        <div class="form-group">
+            <label for="ccNumber">Номер кредитной карты: </label>
+            <input type="text" id="ccNumber" th:field="*{ccNumber}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('ccNumber')}"
+                          th:errors="*{ccNumber}">Номер кредитной карты ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ccExpiration">Срок действия: </label>
+            <input type="text" id="ccExpiration" th:field="*{ccExpiration}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('ccExpiration')}"
+                          th:errors="*{ccExpiration}">Срок действия ошибка</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ccCVV">CVV: </label>
+            <input type="text" id="ccCVV" th:field="*{ccCVV}"/>
+            <div class="validationErrorWrapper">
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('ccCVV')}"
+                          th:errors="*{ccCVV}">CVV ошибка</span>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Отправить заказ" />
+</form>
+</body>
+</html>
